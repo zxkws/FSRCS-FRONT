@@ -11,6 +11,7 @@
     <el-menu-item index="/dynamic" style="margin-left: 10%">动态管理</el-menu-item>
     <el-menu-item index="/user" style="margin-left: 10%">用户管理</el-menu-item>
     <el-menu-item index="/role" style="margin-left: 10%">角色管理</el-menu-item>-->
+    <el-menu-item index="/canvasDemo">canvasDemo</el-menu-item>
     <el-menu-item v-for="item in routesArr" :index="item.url" :key="item.id" style="margin-left: 10%">{{item.permissionName}}</el-menu-item>
     <el-menu-item index="/person" style="margin-left: 10%">
         <div class="avatar-wrapper">
@@ -55,6 +56,10 @@ export default {
   },
   methods: {
     handleSelect (key, keyPath) {
+      console.log(this.$route)
+      console.log(this.$router)
+      console.log(keyPath)
+      console.log(this.activeIndex)
     }
   }
 }

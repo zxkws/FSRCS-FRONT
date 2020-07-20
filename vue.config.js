@@ -18,7 +18,7 @@ function mockProxy (app, mockDirPath) {
 }
 
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
-const configProxy = 'http://localhost:8280/'
+const configProxy = 'http://localhost:8080/'
 module.exports = {
   lintOnSave: !IS_PROD,
   publicPath: IS_PROD ? '/ems' : '/',
