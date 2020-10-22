@@ -21,10 +21,14 @@
           <i class="el-icon-caret-bottom" />
         </div>
     </el-menu-item>
+    <el-menu-item>
+      <i class="el-icon-switch-button" v-on:click="logout" style="float:right;font-size: 40px;color: #222;padding: 10px"></i>
+    </el-menu-item>
   </el-menu>
 </template>
 
 <script>
+import { logoutApi } from '../http/apiResource'
 import { mapGetters } from 'vuex'
 export default {
   name: 'Header',
@@ -60,6 +64,14 @@ export default {
       console.log(this.$router)
       console.log(keyPath)
       console.log(this.activeIndex)
+    },
+    logout () {
+      this.$http.post(logoutApi, {}).then(res => {
+        if (res.data.success) {
+          sessionStorage.clear()
+          this.$router.push('/')
+        }
+      })
     }
   }
 }

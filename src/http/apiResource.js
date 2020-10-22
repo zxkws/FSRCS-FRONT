@@ -8,6 +8,10 @@ const baseUrl = '/fsrcs'
 * */
 export const loginApi = baseUrl + '/login'
 
+/**
+ *退出
+ */
+export const logoutApi = baseUrl + '/logout'
 /*
 * 修改个人信息
 * */
